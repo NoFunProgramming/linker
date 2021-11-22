@@ -2,7 +2,7 @@
 #define mach_hpp
 
 #include "segment.hpp"
-//#include "table.hpp"
+#include "table.hpp"
 
 namespace Mach {
 
@@ -28,7 +28,7 @@ class Mach
     void write(std::ofstream& out);
 
     std::vector<std::unique_ptr<Segment>> segments;
-    //std::vector<std::unique_ptr<Table>> tables;
+    std::vector<std::unique_ptr<Table>> tables;
     
     uint32_t magic;
     uint32_t cpu_type;

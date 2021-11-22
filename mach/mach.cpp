@@ -48,13 +48,13 @@ Mach::parse(std::ifstream& in)
         
         switch (cmd) {
             case 0x02: {
-//                std::unique_ptr<Table> table = std::make_unique<Table>();
-//                if (table->parse(in)) {
-//                    tables.push_back(std::move(table));
-//                } else {
-//                    std::cerr << "Error while reading symbol table.\n";
-//                    return false;
-//                }
+                std::unique_ptr<Table> table = std::make_unique<Table>();
+                if (table->parse(in)) {
+                    tables.push_back(std::move(table));
+                } else {
+                    std::cerr << "Error while reading symbol table.\n";
+                    return false;
+                }
                 break;
             }
             case 0x19: {
@@ -97,9 +97,9 @@ Mach::print(std::ostream& out)
     for (auto& s : segments) {
         s->print(out);
     }
-//    for (auto& t : tables) {
-//        t->print(out);
-//    }
+    for (auto& t : tables) {
+        t->print(out);
+    }
 }
 
 void
@@ -113,10 +113,10 @@ Mach::write(std::ofstream& out)
         cmd_num++;
         cmd_size += s->cmd_size();
     }
-//    for (auto& t : tables) {
-//        cmd_num++;
-//        cmd_size += t->write_size();
-//    }
+    for (auto& t : tables) {
+        cmd_num++;
+        cmd_size += t->write_size();
+    }
     
     out.write((char*)&magic,       sizeof(magic));
     out.write((char*)&cpu_type,    sizeof(cpu_type));
@@ -136,11 +136,11 @@ Mach::write(std::ofstream& out)
         head += s->cmd_size();
     }
     
-//    for (auto& t : tables) {
-//        out.seekp(head);
-//        t->write(out, &end);
-//        head += t->write_size();
-//    }
+    for (auto& t : tables) {
+        out.seekp(head);
+        t->write(out, &end);
+        head += t->write_size();
+    }
     
     std::cout << "\n";
 }

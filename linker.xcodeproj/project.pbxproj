@@ -11,6 +11,7 @@
 		96D589FF274B5FD10022A0BB /* section.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D589FD274B5FD10022A0BB /* section.cpp */; };
 		96D58A03274B62800022A0BB /* segment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D58A01274B62800022A0BB /* segment.cpp */; };
 		96D58A06274B64870022A0BB /* mach.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D58A04274B64870022A0BB /* mach.cpp */; };
+		96D58A0E274B72660022A0BB /* table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D58A0C274B72660022A0BB /* table.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,7 +35,9 @@
 		96D58A02274B62800022A0BB /* segment.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = segment.hpp; sourceTree = "<group>"; };
 		96D58A04274B64870022A0BB /* mach.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = mach.cpp; sourceTree = "<group>"; };
 		96D58A05274B64870022A0BB /* mach.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = mach.hpp; sourceTree = "<group>"; };
-		96D58A09274B66D60022A0BB /* test.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; name = test.s; path = test/test.s; sourceTree = SOURCE_ROOT; };
+		96D58A0B274B68860022A0BB /* test.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = test.s; sourceTree = "<group>"; };
+		96D58A0C274B72660022A0BB /* table.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = table.cpp; sourceTree = "<group>"; };
+		96D58A0D274B72660022A0BB /* table.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = table.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +56,7 @@
 			children = (
 				96D58A00274B5FDE0022A0BB /* mach */,
 				96D589F5274B5B950022A0BB /* src */,
-				96D58A07274B65AE0022A0BB /* test */,
+				96D58A0A274B68570022A0BB /* test */,
 				96D589F4274B5B950022A0BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,16 +84,18 @@
 				96D589FD274B5FD10022A0BB /* section.cpp */,
 				96D58A02274B62800022A0BB /* segment.hpp */,
 				96D58A01274B62800022A0BB /* segment.cpp */,
+				96D58A0D274B72660022A0BB /* table.hpp */,
+				96D58A0C274B72660022A0BB /* table.cpp */,
 				96D58A05274B64870022A0BB /* mach.hpp */,
 				96D58A04274B64870022A0BB /* mach.cpp */,
 			);
 			path = mach;
 			sourceTree = "<group>";
 		};
-		96D58A07274B65AE0022A0BB /* test */ = {
+		96D58A0A274B68570022A0BB /* test */ = {
 			isa = PBXGroup;
 			children = (
-				96D58A09274B66D60022A0BB /* test.s */,
+				96D58A0B274B68860022A0BB /* test.s */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -154,6 +159,7 @@
 			files = (
 				96D589F7274B5B950022A0BB /* main.cpp in Sources */,
 				96D589FF274B5FD10022A0BB /* section.cpp in Sources */,
+				96D58A0E274B72660022A0BB /* table.cpp in Sources */,
 				96D58A06274B64870022A0BB /* mach.cpp in Sources */,
 				96D58A03274B62800022A0BB /* segment.cpp in Sources */,
 			);
